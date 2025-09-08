@@ -1,4 +1,4 @@
-from classes.week00.second_class.utils import clear_screen
+
 '''
 # 1
 
@@ -6,6 +6,18 @@ Write down the steps a program would need to make a cup of tea. Then implement a
 function make_tea() that prints each step.
 '''
 # enter your code here
+
+def make_tea():
+    print("Step 1: Boil water")
+    print("Step 2: Place a teabag in the cup")
+    print("Step 3: Pour hot water into the cup")
+    print("Step 4: Let the tea steep for a few minutes")
+    print("Step 5: Remove the teabag")
+    print("Step 6: Add sugar or milk if desired")
+    print("Step 7: Stir and enjoy your tea!")
+
+make_tea()
+
 
 
 pause=input('pause')
@@ -18,6 +30,14 @@ Given a list [2, 4, 6, 8, 10], write a program that prints the next three number
 '''
 # enter your code here
 
+numbers = [2, 4, 6, 8, 10]
+
+last_number = numbers[-1]  # get the last element (10)
+step = numbers[1] - numbers[0]  # difference between consecutive numbers (2)
+
+for i in range(1, 4):
+    print(last_number + i * step)
+
 
 pause=input('pause')
 clear_screen()
@@ -28,6 +48,10 @@ Write a program that asks the user for their first and last name, then prints a 
 "Hello, <first name> <last name>!"
 '''
 # enter your code here
+first_name = input("Enter your first name: ")
+last_name = input("Enter your last name: ")
+
+print(f"Hello, {first_name} {last_name}!")
 
 
 pause=input('pause')
@@ -40,6 +64,7 @@ Write a program that prints your Python version and platform using the sys and p
 # enter your code here
 
 
+
 pause=input('pause')
 clear_screen()
 '''
@@ -49,6 +74,15 @@ Ask the user to input two numbers. Calculate and print their sum, difference, pr
 and division (both / and //).
 '''
 # enter your code here
+
+num1 = int(input("Enter the first number: "))
+num2 = int(input("Enter the second number: "))
+
+print("Sum:", num1 + num2)
+print("Difference:", num1 - num2)
+print("Product:", num1 * num2)
+print("Division (/):", num1 / num2)
+print("Floor Division (//):", num1 // num2)
 
 
 pause=input('pause')
@@ -62,6 +96,13 @@ capitalized, and split it into words.
 
 # enter your code here
 
+sentence = input("Enter a sentence: ")
+
+print("Uppercase:", sentence.upper())
+print("Lowercase:", sentence.lower())
+print("Capitalized:", sentence.capitalize())
+print("Split into words:", sentence.split())
+
 
 pause=input('pause')
 clear_screen()
@@ -73,6 +114,12 @@ Calculate the result of the following without parentheses and then with parenthe
 '''
 # enter your code here
 
+result1 = 10 + 2 * 5 / 2 - 3 ** 2
+print("Without parentheses:", result1)
+
+# With parentheses (example: group addition first)
+result2 = (10 + 2) * 5 / (2 - 3) ** 2
+print("With parentheses:", result2)
 
 pause=input('pause')
 clear_screen()
@@ -84,6 +131,11 @@ then print the list.
 '''
 # enter your code here
 
+foods = ["Pizza", "Sushi", "Tacos"]
+foods[1] = "Burgers"  # replace 2nd item
+
+print("Updated list:", foods)
+
 
 pause=input('pause')
 clear_screen()
@@ -94,6 +146,14 @@ Create a tuple with four numbers. Try to change the first number (observe the er
 and then print the tuple.
 '''
 # enter your code here
+numbers = (1, 2, 3, 4)
+
+try:
+    numbers[0] = 10
+except TypeError as Error:
+    print("Error:", Error)
+
+print("Tuple:", numbers)
 
 
 pause=input('pause')
@@ -106,6 +166,19 @@ favorite numbers and add a new number.
 '''
 # enter your code here
 
+student = {"name": "Alice", "age": 20}
+
+# update age
+student["age"] = 21
+
+# add favorite numbers
+favorite_numbers = [3, 7, 12]
+favorite_numbers.append(42)
+
+print("Student:", student)
+print("Favorite numbers:", favorite_numbers)
+
+
 
 pause=input('pause')
 clear_screen()
@@ -117,6 +190,14 @@ and read it back to print it.
 '''
 # enter your code here
 
+quote = input("Enter your favorite quote: ")
+
+with open("quotes.txt", "w") as file:
+    file.write(quote)
+
+with open("quotes.txt", "r") as file:
+    print("Your saved quote:", file.read())
+
 
 pause=input('pause')
 clear_screen()
@@ -125,6 +206,18 @@ clear_screen()
 Ask the user to input 5 numbers (one at a time), store them in a list, and print the sum and average.
 '''
 # enter your code here
+
+numbers = []
+
+for i in range(5):
+    num = int(input(f"Enter number {i+1}: "))
+    numbers.append(num)
+
+total = sum(numbers)
+average = total / len(numbers)
+
+print("Sum:", total)
+print("Average:", average)
 
 
 pause=input('pause')
