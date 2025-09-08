@@ -1,11 +1,6 @@
-numbers = []
+result1 = 10 + 2 * 5 / 2 - 3 ** 2
+print("Without parentheses:", result1)
 
-for i in range(5):
-    num = int(input(f"Enter number {i+1}: "))
-    numbers.append(num)
-
-total = sum(numbers)
-average = total / len(numbers)
-
-print("Sum:", total)
-print("Average:", average)
+# With parentheses 
+result2 = (10 + (2 * (5 / 2)) - (3 ** 2))
+print("With parentheses:", result2)

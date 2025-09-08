@@ -7,6 +7,16 @@ function make_tea() that prints each step.
 '''
 # enter your code here
 
+steps=['step1','step2','step3']
+def make_tea(myList):
+    myList[2] = 'step5'
+    for item in myList:
+        print(item)
+    
+
+make_tea(steps) #turns steps into a function and calls the function
+
+
 def make_tea():
     print("Step 1: Boil water")
     print("Step 2: Place a teabag in the cup")
@@ -38,6 +48,13 @@ step = numbers[1] - numbers[0]  # difference between consecutive numbers (2)
 for i in range(1, 4):
     print(last_number + i * step)
 
+#alternate way
+
+nums = [2, 4, 6, 8, 10]
+for i in range (3):
+    next = nums[-1] + 2 + i * 2
+    print(next)
+
 
 pause=input('pause')
 clear_screen()
@@ -50,6 +67,8 @@ Write a program that asks the user for their first and last name, then prints a 
 # enter your code here
 first_name = input("Enter your first name: ")
 last_name = input("Enter your last name: ")
+first_name= first_name.capitalize()
+last_name = last_name.capitalize()
 
 print(f"Hello, {first_name} {last_name}!")
 
@@ -63,7 +82,14 @@ Write a program that prints your Python version and platform using the sys and p
 '''
 # enter your code here
 
+import sys
+import platform
+import pprint
 
+#pprint.pprint(dir(sys)) #directory of whats inside sys
+
+print(type(sys.version))
+print(sys.version, sys.platform)
 
 pause=input('pause')
 clear_screen()
@@ -75,14 +101,40 @@ and division (both / and //).
 '''
 # enter your code here
 
-num1 = int(input("Enter the first number: "))
+#makes sure your person enters a number and not text
+txt = 'please enter an integer: '
+while True:
+    try:
+        x = int(input(txt))
+        break
+    except ValueError:
+        txt = 'follow directions, enter a number: '
+        
+txt = 'please enter an integer: '
+while True:
+    try:
+        y = int(input(txt))
+        break
+    except ValueError:
+        txt = 'follow directions, enter a number: '
+
+total = x + y
+diff = x - y 
+prod = x * y 
+div = x / y 
+flr = x // y 
+
+print(total, diff, prod, div, flr)
+
+
+num1 = int(input("Enter the first number: ")) #if enters text will crash, use try, except
 num2 = int(input("Enter the second number: "))
 
 print("Sum:", num1 + num2)
 print("Difference:", num1 - num2)
 print("Product:", num1 * num2)
 print("Division (/):", num1 / num2)
-print("Floor Division (//):", num1 // num2)
+print("Floor Division (//):", num1 // num2) #rounds down the answer for division
 
 
 pause=input('pause')
@@ -98,10 +150,10 @@ capitalized, and split it into words.
 
 sentence = input("Enter a sentence: ")
 
-print("Uppercase:", sentence.upper())
-print("Lowercase:", sentence.lower())
-print("Capitalized:", sentence.capitalize())
-print("Split into words:", sentence.split())
+print(sentence.upper())
+print(sentence.lower())
+print(sentence.capitalize())
+print(sentence.split()) #splits at the spaces
 
 
 pause=input('pause')
@@ -117,8 +169,8 @@ Calculate the result of the following without parentheses and then with parenthe
 result1 = 10 + 2 * 5 / 2 - 3 ** 2
 print("Without parentheses:", result1)
 
-# With parentheses (example: group addition first)
-result2 = (10 + 2) * 5 / (2 - 3) ** 2
+# With parentheses 
+result2 = (10 + (2 * (5 / 2)) - (3 ** 2))
 print("With parentheses:", result2)
 
 pause=input('pause')
