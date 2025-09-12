@@ -34,8 +34,7 @@ def draw_diamond():
     Ask the user for an odd number for the diamond height
     and print a symmetric diamond of that height.
     """
-    
-    print("you have some work todo!, draw_diamond")
+print("you have some work todo!, draw_diamond")
 
 
     # TODO: Prompt user for an odd number
@@ -54,10 +53,18 @@ while True:
 
     # TODO: Draw the top half of the diamond
 
+for i in range(1, height + 1, 2):
+        spaces = (height - i) // 2
+        print(" " * spaces + "*" * i)
+
     # TODO: Draw the bottom half of the diamond
+    
+for i in range(height - 2, 0, -2):
+        spaces = (height - i) // 2
+        print(" " * spaces + "*" * i)
 
 # Uncomment to test Part 1
-# draw_diamond()
+draw_diamond()
 
 
 # ==============================
