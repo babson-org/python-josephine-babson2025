@@ -22,7 +22,7 @@ def main():
 
 """
 Lab 1 - Python Basics
-Author: <Your Name>
+Author: <Josephine Ashton>
 Instructions: Complete each part below. Save your work and commit + sync in Codespaces.
 """
 
@@ -37,8 +37,20 @@ def draw_diamond():
     
     print("you have some work todo!, draw_diamond")
 
+
     # TODO: Prompt user for an odd number
-    height = int(input("Enter an odd number for the diamond height: "))
+
+txt = "Please enter an odd number for the diamond height: "
+while True:
+    try:
+        height = int(input("Enter an odd number for the diamond height: "))
+        if height % 2 == 0:       # check if it's odd
+            print("It must be odd, try again: ")
+            continue
+        break  # valid odd number, exit loop
+    except ValueError:
+        txt = "A number for my kingdom, please"
+
 
     # TODO: Draw the top half of the diamond
 
