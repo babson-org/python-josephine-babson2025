@@ -58,7 +58,7 @@ for i in range(1, height + 1, 2):
         print(" " * spaces + "*" * i)
 
     # TODO: Draw the bottom half of the diamond
-    
+
 for i in range(height - 2, 0, -2):
         spaces = (height - i) // 2
         print(" " * spaces + "*" * i)
@@ -79,25 +79,35 @@ def text_analysis():
         - Number of sentences (., ?, !) 
     """
 
-    print("you have some work todo!, text_analysis")
+print("you have some work todo!, text_analysis")
 
     # TODO: Get user input
-    text = input("Enter some text: ")
+text = input("Enter some text: ")
 
     # TODO: Count letters
-    letters = 0
+letters = 0
+for c in text:
+    if c.isalpha():
+        letters += 1
 
     # TODO: Count words
+words = len(text.split())
+
 
     # TODO: Count sentences
+    
+sentences = 0
+for c in text:
+    if c in ".?!":
+        sentences += 1
 
     # TODO: Print the results
-    print(f"Letters: {letters}")
-    print(f"Words: {0}")        # replace 0
-    print(f"Sentences: {0}")    # replace 0
+print(f"Letters: {letters}")
+print(f"Words: {words}")        # replace 0
+print(f"Sentences: {sentences}")    # replace 0
 
 # Uncomment to test Part 2
-# text_analysis()
+text_analysis()
 
 
 # ==============================
