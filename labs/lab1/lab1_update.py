@@ -103,8 +103,8 @@ for c in text:
 
     # TODO: Print the results
 print(f"Letters: {letters}")
-print(f"Words: {words}")        # replace 0
-print(f"Sentences: {sentences}")    # replace 0
+print(f"Words: {words}")        
+print(f"Sentences: {sentences}")    
 
 # Uncomment to test Part 2
 text_analysis()
@@ -133,16 +133,16 @@ def caesar_cipher():
         shift = -shift
 
     # TODO: Implement encryption and decryption logic
-    
+
     alphabet = list("abcdefghijklmnopqrstuvwxyz")
     length = len(alphabet)
     result = ""
     
     for char in text:
         if char in alphabet:
-            idx = alphabet.index(char)             # find current letter’s spot
-            new_idx = (idx + shift) % length       # move forward or backward
-            result += alphabet[new_idx]            # add new shifted letter
+            idx = alphabet.index(char)             
+            new_idx = (idx + shift) % length       
+            result += alphabet[new_idx]            
         else:
             result += char 
 
