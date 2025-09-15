@@ -129,15 +129,28 @@ def caesar_cipher():
 
     # TODO: Ask user whether to encrypt or decrypt
     choice = input("Type 'e' to encrypt or 'd' to decrypt: ").lower()
+    if choice == 'd':
+        shift = -shift
 
     # TODO: Implement encryption and decryption logic
+    
+    alphabet = list("abcdefghijklmnopqrstuvwxyz")
+    length = len(alphabet)
     result = ""
+    
+    for char in text:
+        if char in alphabet:
+            idx = alphabet.index(char)             # find current letter’s spot
+            new_idx = (idx + shift) % length       # move forward or backward
+            result += alphabet[new_idx]            # add new shifted letter
+        else:
+            result += char 
 
     # TODO: Print the final result
     print("Result:", result)
 
 # Uncomment to test Part 3
-# caesar_cipher()
+caesar_cipher()
 
 
 
