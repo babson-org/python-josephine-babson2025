@@ -84,10 +84,16 @@ print("you have some work todo!, text_analysis")
     # TODO: Get user input
 text = input("Enter some text: ")
 
+'''initialize counters
+letters= 0
+words= 1
+sentences = 0 
+'''
+
     # TODO: Count letters
 letters = 0
-for c in text:
-    if c.isalpha():
+for char in text:
+    if char.isalpha():
         letters += 1
 
     # TODO: Count words
@@ -97,8 +103,8 @@ words = len(text.split())
     # TODO: Count sentences
     
 sentences = 0
-for c in text:
-    if c in ".?!":
+for char in text:
+    if char in ".?!":
         sentences += 1
 
     # TODO: Print the results
