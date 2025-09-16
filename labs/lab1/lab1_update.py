@@ -27,7 +27,7 @@ Instructions: Complete each part below. Save your work and commit + sync in Code
 """
 
 # ==============================
-# Part 1: Draw a Diamond
+# Part 1: Draw a Diamond FIX TO BE JUST THE OUTLINE
 # ==============================
 def draw_diamond():
     """
@@ -55,13 +55,19 @@ while True:
 
 for i in range(1, height + 1, 2):
         spaces = (height - i) // 2
-        print(" " * spaces + "*" * i)
+        if i == 1: 
+            print(" " * spaces + "*")
+        else:  
+            print(" " * spaces + "*" + " " * (i - 2) + "*")
 
     # TODO: Draw the bottom half of the diamond
 
 for i in range(height - 2, 0, -2):
         spaces = (height - i) // 2
-        print(" " * spaces + "*" * i)
+        if i == 1:  
+            print(" " * spaces + "*")
+        else:  
+            print(" " * spaces + "*" + " " * (i - 2) + "*")
 
 # Uncomment to test Part 1
 draw_diamond()
@@ -132,6 +138,7 @@ def caesar_cipher():
 
     # TODO: Get shift value
     shift = int(input("Enter shift value (integer): "))
+## ONLY ALLOW 1-25
 
     # TODO: Ask user whether to encrypt or decrypt
     choice = input("Type 'e' to encrypt or 'd' to decrypt: ").lower()
