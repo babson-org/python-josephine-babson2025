@@ -48,7 +48,7 @@
    
     // ?? Notebook settings
     "notebook.globalToolbar": false,
-    
+    "jupyter.globalToolbar": false,    
     "notebook.cellToolbarVisibility": "hidden",   // hides the little run/+ buttons on each cell
 
   
@@ -68,7 +68,8 @@
   "code-runner.ignoreSelection": true,
   "code-runner.executorMap": {
      "python": "python -u"
-  }
+  },
+  "workbench.editor.tabActionLocation": "right"
 }
 
 
