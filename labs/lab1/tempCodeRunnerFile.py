@@ -1,42 +1,48 @@
-def draw_diamond():
+def caesar_cipher():
     """
-    Ask the user for an odd number for the diamond height
-    and print a symmetric diamond of that height.
+    Ask the user for text and a shift value.
+    Provide options to encrypt or decrypt the text using a Caesar cipher.
     """
-print("you have some work todo!, draw_diamond")
 
+    print("you have some work todo!, caesar_cypher")
 
-    # TODO: Prompt user for an odd number
+    # TODO: Get user input text
+    text = input("Please enter text: ")
 
-txt = "Please enter an odd number for the diamond height: "
-while True:
-    try:
-        height = int(input("Enter an odd number for the diamond height: "))
-        if height % 2 == 0:       # check if it's odd
-            print("It must be odd, try again: ")
-            continue
-        break  # valid odd number, exit loop
-    except ValueError:
-        txt = "A number for my kingdom, please"
+    # TODO: Get shift value
+    while True:
+        try: 
+            shift = int(input("Enter shift value (1-25): "))
+            if 1 <= shift <= 25:
+                break
+            else: print("shift must be between 1 and 25")
+        except ValueError:
+            print('Please enter an integer 1-25')
 
+## ONLY ALLOW 1-25
 
-    # TODO: Draw the top half of the diamond
+    # TODO: Ask user whether to encrypt or decrypt
+    choice = input("Type 'e' to encrypt or 'd' to decrypt: ").lower()
+    if choice == 'd':
+        shift = -shift
 
-for i in range(1, height + 1, 2):
-        spaces = (height - i) // 2
-        if i == 1:  # top tip (single star)
-            print(" " * spaces + "*")
-        else:  # outline: star + spaces + star
-            print(" " * spaces + "*" + " " * (i - 2) + "*")
+    # TODO: Implement encryption and decryption logic
 
-    # TODO: Draw the bottom half of the diamond
+    alphabet = list("abcdefghijklmnopqrstuvwxyz")
+    length = len(alphabet)
+    result = ""
     
-for i in range(height - 2, 0, -2):
-        spaces = (height - i) // 2
-        if i == 1:  # bottom tip (single star)
-            print(" " * spaces + "*")
-        else:  # outline
-            print(" " * spaces + "*" + " " * (i - 2) + "*")
+    for char in text:
+        if char in alphabet:
+            idx = alphabet.index(char)             
+            new_idx = (idx + shift) % length       
+            result += alphabet[new_idx]            
+        else:
+            result += char 
 
-# Uncomment to test Part 1
-draw_diamond()
+    # TODO: Print the final result
+    print("Result:", result)
+
+# Uncomment to test Part 3
+caesar_cipher()
+

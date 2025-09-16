@@ -134,10 +134,18 @@ def caesar_cipher():
     print("you have some work todo!, caesar_cypher")
 
     # TODO: Get user input text
-    text = input("Enter text: ")
+    text = input("Please enter text: ")
 
     # TODO: Get shift value
-    shift = int(input("Enter shift value (integer): "))
+    while True:
+        try: 
+            shift = int(input("Enter shift value (1-25): "))
+            if 1 <= shift <= 25:
+                break
+            else: print("shift must be between 1 and 25")
+        except ValueError:
+            print('Please enter an integer 1-25')
+
 ## ONLY ALLOW 1-25
 
     # TODO: Ask user whether to encrypt or decrypt
