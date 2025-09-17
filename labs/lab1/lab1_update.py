@@ -29,6 +29,17 @@ Instructions: Complete each part below. Save your work and commit + sync in Code
 # ==============================
 # Part 1: Draw a Diamond FIX TO BE JUST THE OUTLINE
 # ==============================
+
+# Steps to solve:
+# 1. Ask the user for an odd number between 3 and 15 for the height of the diamond.
+# 2. Make sure the number is valid (odd, in range).
+# 3. Use a loop to print the top half of the diamond:
+#    - Start with 1 star and go up by 2 each row until reaching the height.
+#    - Decrease spaces each row so stars are centered.
+# 4. Use another loop to print the bottom half of the diamond:
+#    - Start with height-2 stars and go down by 2 until 1.
+#    - Increase spaces each row so the diamond stays centered.
+
 def draw_diamond():
     """
     Ask the user for an odd number for the diamond height
@@ -76,6 +87,21 @@ draw_diamond()
 # ==============================
 # Part 2: Count Letters, Words, and Sentences
 # ==============================
+
+# Steps to solve:
+# 1. Ask the user to enter a block of text.
+# 2. Count the number of letters:
+#    - Using a for loop
+#    - Go through each character.
+#    - If it's a letter (a–z or A–Z), add 1 to the count.
+# 3. Count the number of words:
+#    - Split the text by spaces using .split().
+#    - Count how many words are in the list.
+# 4. Count the number of sentences:
+#    - Look at each character in the text.
+#    - If it’s a '.', '!', or '?', add 1 to the sentence count.
+# 5. Print the counts for letters, words, and sentences.
+
 def text_analysis():
     """
     Ask the user for a block of text.
@@ -125,6 +151,22 @@ text_analysis()
 # ==============================
 # Part 3: Caesar Cipher – Encrypt and Decrypt
 # ==============================
+
+# Steps to solve:
+# 1. Ask the user to enter a message (text).
+# 2. Ask the user to enter a shift value between 1 and 25.
+#    - Keep asking until they give a valid number.
+# 3. Ask if they want to encrypt (shift forward) or decrypt (shift backward).
+#    - If decrypt, flip the shift to negative.
+# 4. Make an alphabet list (a–z).
+# 5. For each character in the text:
+#    - If it’s a letter, find its position in the alphabet.
+#    - Shift it by the shift value (using shifted alphabet).
+#    - Add the new letter to the result string.
+#    - If it’s not a letter (like a space or punctuation), just add it as-is.
+# 6. Print out the final result (encrypted or decrypted text).
+
+
 def caesar_cipher():
     """
     Ask the user for text and a shift value.
