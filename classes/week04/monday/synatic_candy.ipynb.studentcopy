@@ -168,7 +168,7 @@
     "    try:\n",
     "        val = next(gen)   # try to get the next value\n",
     "        print(val)\n",
-    "    except StopIteration:\n",
+    "    except StopIteration: #traps for error\n",
     "        print(\"Generator is spent!\")\n",
     "        break\n",
     "\n",
@@ -201,10 +201,10 @@
     "print(my_list)\n",
     "\n",
     "new_list = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9]\n",
-    "my_set = {i for i in new_list}\n",
+    "my_set = {i for i in new_list} #sets cant have duplicates, will print out one of each number\n",
     "print(my_set)\n",
     "\n",
-    "my_dict = {i: i**2 for i in range(10)}\n",
+    "my_dict = {i: i**2 for i in range(10)} #i: is the key, i**2 is the value\n",
     "print(my_dict)"
    ]
   },
@@ -305,14 +305,10 @@
    "outputs": [],
    "source": [
     "# Flat\n",
-    "[print(f'{i}{j}') for i in range(3) for j in range(4)]\n",
+    "[print(f'{i}{j}') for i in range(3) for j in range(4)] #i is outside loop because left to right\n",
     "\n",
     "# Nested: list of lists\n",
-    "[   [print(f'{i}{j}') for i in range(3)]       for j in range(4)]\n",
-    "\n",
-    "for j in range(4):\n",
-    "    for i in range(3):\n",
-    "        "
+    "[[print(f'{i}{j}') for i in range(3)] for j in range(4)] #j becomes outside loop with brackets"
    ]
   },
   {
@@ -395,10 +391,18 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 1,
    "id": "30",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "a1c\n"
+     ]
+    }
+   ],
    "source": [
     "ml = ['a', 1, 'c']\n",
     "s = ''.join(str(item) for item in ml)\n",
