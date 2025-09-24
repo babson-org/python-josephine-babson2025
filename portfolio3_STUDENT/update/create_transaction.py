@@ -20,7 +20,7 @@ def create_transaction(next_id, type, shares,symbol, name, price, active_client,
     _update_position(active_client, transaction)
 
     
-    active_client['transactions'].append(transaction)
+    active_client['transactions'].append(transaction) #append transaction to the active client
    
     save_clients(clients)
     return 

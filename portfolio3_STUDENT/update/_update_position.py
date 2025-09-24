@@ -6,7 +6,7 @@ def _update_position(active_client, transaction):
             for position in active_client['positions']:                
                 if position['symbol'] == transaction['symbol']:
                     position['shares'] += transaction['shares']
-        else:
+        else: #happens if there are no positions/ active client doesn't exist
             position = {'id': transaction['id'],            
             'shares': round(transaction['shares'], 2),
             'symbol': transaction['symbol'],

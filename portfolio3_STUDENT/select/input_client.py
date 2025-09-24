@@ -12,7 +12,7 @@ def input_client(clients):
 
     next_id = get_next_id(clients)
 
-    active_client = {
+    active_client = { #client youre working with right now
         'id': next_id,
         'fname': fname,
         'lname': lname,
@@ -21,6 +21,6 @@ def input_client(clients):
     }
 
     clients.append(active_client)
-    contribution_input(active_client, clients)
+    contribution_input(active_client, clients) #call contribution input to bring in the first one
 
     return 

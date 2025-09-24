@@ -155,7 +155,7 @@ def select_client(clients):
         menu_items.append(name)
         while True:
             choice = display_menu(menu_items)
-            if choice == '':
+            if choice == None:
                 return None                
             else:
                 #what does choice contain here? what are we returning?
