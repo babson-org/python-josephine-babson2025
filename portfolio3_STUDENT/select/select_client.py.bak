@@ -1,4 +1,4 @@
-from portfolio3_STUDENT.main.display_menu import display_menu
+from portfolio3.main.display_menu import display_menu
 
 def select_client(clients):
 

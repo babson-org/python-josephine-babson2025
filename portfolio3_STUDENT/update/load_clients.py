@@ -1,7 +1,7 @@
 import os
 import json
 
-CLIENTS_JSON_FILE = 'portfolio3/DATA/clients.json'
+CLIENTS_JSON_FILE = 'portfolio3_STUDENT/DATA/clients.json'
 
 # ---------- File Handling ----------
 def load_clients():

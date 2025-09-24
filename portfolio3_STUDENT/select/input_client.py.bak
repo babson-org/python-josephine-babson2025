@@ -1,5 +1,5 @@
-from portfolio3_STUDENT.transactions.contribution_input import contribution_input
-from portfolio3_STUDENT.x_other.get_next_id import get_next_id
+from portfolio3.transactions.contribution_input import contribution_input
+from portfolio3.x_other.get_next_id import get_next_id
 
 def input_client(clients):
     """Gather client input (name + cash) and add to clients list."""

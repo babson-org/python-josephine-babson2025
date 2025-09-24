@@ -1,4 +1,4 @@
-from portfolio3_STUDENT.update.create_transaction import create_transaction
+from portfolio3.update.create_transaction import create_transaction
 
 def contribution_input(active_client, clients):
 

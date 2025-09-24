@@ -1,6 +1,6 @@
 from datetime import datetime 
-from portfolio3_STUDENT.update._update_position import _update_position
-from portfolio3_STUDENT.update.save_clients import save_clients
+from portfolio3.update._update_position import _update_position
+from portfolio3.update.save_clients import save_clients
 
 def create_transaction(next_id, type, shares,symbol, name, price, active_client, clients):
 

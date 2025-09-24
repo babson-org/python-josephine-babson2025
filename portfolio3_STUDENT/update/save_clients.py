@@ -1,6 +1,6 @@
 import json
 
-CLIENTS_JSON_FILE = 'portfolio3/DATA/clients.json'
+CLIENTS_JSON_FILE = 'portfolio3_STUDENT/DATA/clients.json'
 
 def save_clients(clients):
     """Save clients to JSON file."""    
