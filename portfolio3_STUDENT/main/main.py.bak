@@ -29,16 +29,16 @@ what design issues are we not handling?
 How do we store our data?
 '''
 
-from portfolio3.update.load_clients import load_clients
-from portfolio3.select.select_client import select_client
-from portfolio3.select.input_client import input_client
-from portfolio3.main.display_menu import display_menu
-from portfolio3.transactions.buy_input import buy_input
-from portfolio3.transactions.sell_input import sell_input
-from portfolio3.transactions.contribution_input import contribution_input
-from portfolio3.transactions.withdrawal_input import withdrawal_input
-from portfolio3.x_other.view_portfolio import view_portfolio
-from portfolio3.x_other.view_transactions import view_transactions
+from portfolio3_STUDENT.update.load_clients import load_clients
+from portfolio3_STUDENT.select.select_client import select_client
+from portfolio3_STUDENT.select.input_client import input_client
+from portfolio3_STUDENT.main.display_menu import display_menu
+from portfolio3_STUDENT.transactions.buy_input import buy_input
+from portfolio3_STUDENT.transactions.sell_input import sell_input
+from portfolio3_STUDENT.transactions.contribution_input import contribution_input
+from portfolio3_STUDENT.transactions.withdrawal_input import withdrawal_input
+from portfolio3_STUDENT.x_other.view_portfolio import view_portfolio
+from portfolio3_STUDENT.x_other.view_transactions import view_transactions
 
 
 # ---------- Main Flow ----------

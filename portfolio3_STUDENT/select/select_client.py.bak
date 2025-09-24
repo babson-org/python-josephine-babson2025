@@ -1,4 +1,4 @@
-from portfolio3.main.display_menu import display_menu
+from portfolio3_STUDENT.main.display_menu import display_menu
 
 def select_client(clients):
 
@@ -8,7 +8,7 @@ def select_client(clients):
         return None
 
     menu_items = []
-    for client in clients:        
+    for client in clients:      #list of dictionaries of clients  
         name = client['fname'] + ' ' + client['lname']
         menu_items.append(name)
        
@@ -18,4 +18,4 @@ def select_client(clients):
             return None                
         else:
             #what does choice contain here? what are we returning?                
-            return clients[choice - 1] 
+            return clients[choice - 1] #list starts at 0 so -1 references spot 0

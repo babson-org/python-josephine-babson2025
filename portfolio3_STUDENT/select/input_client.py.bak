@@ -1,5 +1,5 @@
-from portfolio3.transactions.contribution_input import contribution_input
-from portfolio3.x_other.get_next_id import get_next_id
+from portfolio3_STUDENT.transactions.contribution_input import contribution_input
+from portfolio3_STUDENT.x_other.get_next_id import get_next_id
 
 def input_client(clients):
     """Gather client input (name + cash) and add to clients list."""
@@ -12,7 +12,7 @@ def input_client(clients):
 
     next_id = get_next_id(clients)
 
-    active_client = {
+    active_client = { #client youre working with right now
         'id': next_id,
         'fname': fname,
         'lname': lname,
@@ -21,6 +21,6 @@ def input_client(clients):
     }
 
     clients.append(active_client)
-    contribution_input(active_client, clients)
+    contribution_input(active_client, clients) #call contribution input to bring in the first one
 
     return 
