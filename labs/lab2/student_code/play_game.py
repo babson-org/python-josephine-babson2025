@@ -91,7 +91,7 @@ def play_game():
     ai_name = 'Big Mean Machine'
     player_name = input('Please enter your name: ')
     
-    sys.stdout.flush()
+    sys.stdout.flush()  #print whatever you have even if buffer isn't full
 
     # Ask who plays first: 1 = player, 2 = computer.
     txt = 'Who plays first (1/you, 2/computer)? '
