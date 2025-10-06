@@ -14,10 +14,6 @@ def calc_score(board: list[int]):
         6 7 8 
         '''
 
-    if abs(board[0] + board[1] + board[2]) == 10: return board[0] + board[1] + board[2]
-    elif... #do again for other ways to win, 3-4-5, 6-7-8, 0-3-6, etc.
-
-    else: return 0 
 
     def line_sum(a, b, c):
         '''
@@ -27,10 +23,24 @@ def calc_score(board: list[int]):
          
         # TODO: Sum the values at board[a], board[b], board[c] 
         # TODO: Return 30 if X wins, -30 if O wins otherwise do not return
-        pass
-     
+
+        board_total = board[a] + board[b] + board[c]
+        if board_total == 30 or board_total == -30: # 30= player win, -30 = computer win
+            return board_total
+        return 0
+
+ 
     # TODO: For each of the 8 ways to win
     # TODO: Check the cells in each row, column, or diagonal using line_sum
     # TODO: Return 0 if line_sum() didn't return 30 or -30
+
+      
+    for (a, b, c) in [(0,1,2), (3,4,5), (6,7,8), #rows                 
+                      (0,3,6), (1,4,7), (2,5,8), #columns
+                      (0,4,8), (2,4,6)]: #diagonals
+        result = line_sum(a, b, c)
+        if result != 0:
+            return result
+     
     pass
 
