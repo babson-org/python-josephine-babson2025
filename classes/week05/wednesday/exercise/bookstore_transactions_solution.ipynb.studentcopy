@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "95b6325a",
+   "id": "0",
    "metadata": {},
    "source": [
     "# 📚 Bookstore Transactions Exercise"
@@ -10,7 +10,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "30d779a3",
+   "id": "1",
    "metadata": {},
    "source": [
     "\n",
@@ -51,10 +51,18 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "df547516",
+   "execution_count": 1,
+   "id": "2",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Final cash balance: -455\n"
+     ]
+    }
+   ],
    "source": [
     "# Example data: 7 bookstore transactions\n",
     "transactions = [\n",

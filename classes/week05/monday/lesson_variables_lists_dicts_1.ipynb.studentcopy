@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "feaaab92",
+   "id": "0",
    "metadata": {},
    "source": [
     "# 📘 Variables, Lists, and Dictionaries\n",
@@ -13,7 +13,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "383bb717",
+   "id": "1",
    "metadata": {},
    "source": [
     "## 1. Introduction: Variables"
@@ -21,7 +21,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "4c9fcde8",
+   "id": "2",
    "metadata": {},
    "source": [
     "Variables are containers that hold data. Every variable has a data type.\n",
@@ -33,7 +33,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "4edb78d5",
+   "id": "3",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -42,7 +42,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b0ddae47",
+   "id": "4",
    "metadata": {},
    "source": [
     "**Guiding Question:**\n",
@@ -52,7 +52,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f620a725",
+   "id": "5",
    "metadata": {},
    "source": [
     "## 2. Scalars / Primitive Variables"
@@ -60,8 +60,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "176541c8",
+   "execution_count": 1,
+   "id": "6",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -75,7 +75,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "1fe19031",
+   "id": "7",
    "metadata": {},
    "source": [
     "**Guiding Question:**\n",
@@ -85,7 +85,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "9c53c10f",
+   "id": "8",
    "metadata": {},
    "source": [
     "## 3. Motivation for Data Structures"
@@ -93,7 +93,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "9491122a",
+   "id": "9",
    "metadata": {},
    "source": [
     "The data is expressed as separate items but all the items relate to the same entity. It makes more sense to keep this data in a data structure."
@@ -101,17 +101,22 @@
   },
   {
    "cell_type": "markdown",
-   "id": "3d64f14f",
+   "id": "10",
    "metadata": {},
    "source": [
     "**Guiding Question:**\n",
     "\n",
-    "👉 What kind of data structure could we use to represent this student? Why?"
+    "👉 What kind of data structure could we use to represent this student? Why?\n",
+    "\n",
+    "    -list\n",
+    "    -dictionary\n",
+    "    -set\n",
+    "    -possibly tuple"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "f924b18c",
+   "id": "11",
    "metadata": {},
    "source": [
     "## 4. Lists"
@@ -119,8 +124,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "40552004",
+   "execution_count": 2,
+   "id": "12",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -129,27 +134,40 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "37a414c3",
+   "execution_count": 3,
+   "id": "13",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Senior\n"
+     ]
+    }
+   ],
    "source": [
     "print(student[3])"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "6c4e7589",
+   "id": "14",
    "metadata": {},
    "source": [
     "**Guiding Question:**\n",
     "\n",
-    "👉 What does the programmer have to know in order to use this student list correctly?"
+    "👉 What does the programmer have to know in order to use this student list correctly?\n",
+    "\n",
+    "    -> what each of the values hold\n",
+    "    -> what the order is -otherwise will crash if someone puts in the wrong order\n",
+    "    -> doesn't need to be all the same type in a list, (strings, booleans, numbers, etc.)\n",
+    "    "
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "4c863cbe",
+   "id": "15",
    "metadata": {},
    "source": [
     "## 5. Dictionaries"
@@ -157,8 +175,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "3b82c2be",
+   "execution_count": 2,
+   "id": "16",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -174,92 +192,203 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "b31a66b3",
+   "execution_count": 3,
+   "id": "17",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Senior\n"
+     ]
+    }
+   ],
    "source": [
     "print(student['year'])"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "f05afd4e",
+   "execution_count": 4,
+   "id": "18",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "fname\n",
+      "lname\n",
+      "dob\n",
+      "year\n",
+      "attendance_rate\n",
+      "credits\n"
+     ]
+    }
+   ],
    "source": [
     "for key in student:\n",
-    "    print(key)"
+    "    print(key)\n",
+    "\n",
+    "#prints everything on the left side of the colon"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "02f30d2d",
+   "execution_count": 5,
+   "id": "19",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "fname\n",
+      "lname\n",
+      "dob\n",
+      "year\n",
+      "attendance_rate\n",
+      "credits\n"
+     ]
+    }
+   ],
    "source": [
     "for key in student.keys():\n",
-    "    print(key)"
+    "    print(key)\n",
+    "\n",
+    "#simpler way to do the same thing"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "6f3fbb53",
+   "execution_count": 6,
+   "id": "20",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Peggy\n",
+      "Lipton\n",
+      "2006-08-30\n",
+      "Senior\n",
+      "0.92\n",
+      "122\n"
+     ]
+    }
+   ],
    "source": [
     "for value in student.values():\n",
-    "    print(value)"
+    "    print(value)\n",
+    "\n",
+    "#gives everything on the right side of the colon"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "61f4b4d7",
+   "execution_count": 7,
+   "id": "21",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "fname = Peggy\n",
+      "lname = Lipton\n",
+      "dob = 2006-08-30\n",
+      "year = Senior\n",
+      "attendance_rate = 0.92\n",
+      "credits = 122\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "\"\\nprint(student['gpa']) #right now would return an error, can avoid by putting in a try except block\\n\\n\""
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
    "source": [
     "for key, value in student.items():\n",
-    "    print(f\"{key} = {value}\")"
+    "    print(f\"{key} = {value}\")\n",
+    "\n",
+    "'''\n",
+    "print(student['gpa']) #right now would return an error, can avoid by putting in a try except block\n",
+    "\n",
+    "'''\n",
+    "\n",
+    "#gives both keys and items, full set of info"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "d7792f4b",
+   "execution_count": 8,
+   "id": "22",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "None\n"
+     ]
+    }
+   ],
    "source": [
-    "print(student.get('gpa'))"
+    "print(student.get('gpa'))\n",
+    "\n",
+    "#can't find it returns none"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "fc5842b6",
+   "execution_count": 9,
+   "id": "23",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "NEEDS TO STUDY\n"
+     ]
+    }
+   ],
    "source": [
     "print(student.get('gpa', 'NEEDS TO STUDY'))"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "5500ad0e",
+   "execution_count": 10,
+   "id": "24",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'fname': 'Peggy', 'lname': 'Lipton', 'dob': '2006-08-30', 'year': 'Senior', 'attendance_rate': 0.92, 'credits': 122, 'gpa': 0.0}\n"
+     ]
+    }
+   ],
    "source": [
     "student.setdefault('gpa', 0.0)\n",
-    "print(student)"
+    "print(student)\n",
+    "\n",
+    "#if key exists return value, if key doesn't exist create a new key with a default value"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "7bfead3a",
+   "id": "25",
    "metadata": {},
    "source": [
     "## 6a. List of Lists"
@@ -267,8 +396,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "30a1d767",
+   "execution_count": 11,
+   "id": "26",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -281,10 +410,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "d6cf02bd",
+   "execution_count": 12,
+   "id": "27",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 2, 3]\n",
+      "[4, 5, 6]\n",
+      "[7, 8, 9]\n"
+     ]
+    }
+   ],
    "source": [
     "for row in board:\n",
     "    print(row)"
@@ -292,10 +431,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "f556cd4c",
+   "execution_count": 13,
+   "id": "28",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1 2 3 \n",
+      "4 5 6 \n",
+      "7 8 9 \n"
+     ]
+    }
+   ],
    "source": [
     "for row in range(3):\n",
     "    for col in range(3):\n",
@@ -305,17 +454,19 @@
   },
   {
    "cell_type": "markdown",
-   "id": "64ca8f4d",
+   "id": "29",
    "metadata": {},
    "source": [
     "**Guiding Question:**\n",
     "\n",
-    "👉 Why did we need `str()` here?"
+    "👉 Why did we need `str()` here?\n",
+    "\n",
+    "    -> when you concatenate (putting together things in a chain or series) must use strings"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "6a56cc4a",
+   "id": "30",
    "metadata": {},
    "source": [
     "## 6b. List of Dictionaries"
@@ -324,7 +475,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "59d0f1d3",
+   "id": "31",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -337,7 +488,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "2580208c",
+   "id": "32",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -348,7 +499,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7995e014",
+   "id": "33",
    "metadata": {},
    "source": [
     "## 📝 Practice Problems "
@@ -356,7 +507,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "a5fd73fb",
+   "id": "34",
    "metadata": {},
    "source": [
     "**1. Create a dictionary `attendance` with three students as keys and the number of classes they attended as values. Print the student with the highest attendance.**"
@@ -364,17 +515,37 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "0439b5e9",
+   "execution_count": 8,
+   "id": "35",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Bob\n"
+     ]
+    }
+   ],
    "source": [
-    "attendance = {'Alice': 18, 'Bob': 20, 'Carol': 15}\n"
+    "attendance = {'Alice': 18, 'Bob': 20, 'Carol': 15}\n",
+    "\n",
+    "max_days = 0 #set as a holder\n",
+    "name = None #set as holder\n",
+    "\n",
+    "#need to loop through dictionary\n",
+    "\n",
+    "for key in attendance:\n",
+    "    if attendance[key] > max_days:\n",
+    "        name = key\n",
+    "        max_days = attendance[key]\n",
+    "\n",
+    "print(name)\n"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "72da8512",
+   "id": "36",
    "metadata": {},
    "source": [
     "**2. Represent a deck of four playing cards using a list of dictionaries, where each dict has `'rank'` and `'suit'`. Print the suit of the third card.**"
@@ -383,14 +554,26 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "9edc32f0",
+   "id": "37",
    "metadata": {},
-   "outputs": [],
-   "source": []
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Spade\n"
+     ]
+    }
+   ],
+   "source": [
+    "cards = [{'rank': 'J', 'suit':'Hearts'}, {'rank': 7, 'suit': 'Clubs'}, {'rank':9, 'suit': 'Spades'}, {'rank': 3, 'suit': 'Diamonds'}]\n",
+    "\n",
+    "print(cards[2]['suit']) #index into cards (list), getting index 2 (third position), looking for suit key"
+   ]
   },
   {
    "cell_type": "markdown",
-   "id": "da54ed30",
+   "id": "38",
    "metadata": {},
    "source": [
     "**3. Create a 3×3 tic-tac-toe board as a list of lists. Write code to mark the center square with `'X'`.**"
@@ -399,14 +582,14 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "43533bcb",
+   "id": "39",
    "metadata": {},
    "outputs": [],
    "source": []
   },
   {
    "cell_type": "markdown",
-   "id": "998a0e22",
+   "id": "40",
    "metadata": {},
    "source": [
     "**4. Suppose you have a dictionary of courses with course names as keys and credit hours as values. Write code to compute the total credit hours.**"
@@ -415,14 +598,14 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "c32bf81f",
+   "id": "41",
    "metadata": {},
    "outputs": [],
    "source": []
   },
   {
    "cell_type": "markdown",
-   "id": "26767986",
+   "id": "42",
    "metadata": {},
    "source": [
     "**5. Given a list of tuples like `[('Alice', 3.5), ('Bob', 2.8)]`, convert it into a dictionary mapping student names to GPAs.**"
@@ -431,14 +614,14 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "df4eb22b",
+   "id": "43",
    "metadata": {},
    "outputs": [],
    "source": []
   },
   {
    "cell_type": "markdown",
-   "id": "6c75d7f7",
+   "id": "44",
    "metadata": {},
    "source": [
     "**6. Extend the `student` dictionary to include a key `'clubs'` that stores a list of extracurricular activities. Add two clubs and print the updated dict.**"
@@ -447,7 +630,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "aa972f8e",
+   "id": "45",
    "metadata": {},
    "outputs": [],
    "source": []
