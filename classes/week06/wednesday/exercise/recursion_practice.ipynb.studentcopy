@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "0",
+   "id": "eff0fbfb",
    "metadata": {},
    "source": [
     "# 🧩 Recursion Practice Problems\n",
@@ -12,55 +12,47 @@
   },
   {
    "cell_type": "markdown",
-   "id": "1",
+   "id": "80791047",
    "metadata": {},
    "source": [
     "## 1️⃣ Reverse a String\n",
-    "Write a recursive function `reverse(s)` that returns the reverse of a string.\n",
-    "\n",
-    "Ex. reverse_string('hello') #'olleh'"
+    "Write a recursive function `reverse(s)` that returns the reverse of a string."
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 3,
    "id": "2",
    "metadata": {},
    "outputs": [
     {
-     "data": {
-      "text/plain": [
-       "\"\\ngets last letter\\n\\ntxt = 'Hello'\\nl = txt[-1]\\ntxt = txt[:-1]\\nprint(l, txt)\\n\""
-      ]
-     },
-     "execution_count": 4,
-     "metadata": {},
-     "output_type": "execute_result"
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "olleh\n"
+     ]
     }
    ],
    "source": [
     "# TODO: Implement reverse(s)\n",
-    "\n",
-    "def reverse_string(s):\n",
-    "    if s == '':\n",
-    "        return ''\n",
-    "    else: return s[-1] + s[:-1]\n",
-    "\n",
-    "\n",
-    "\n",
-    "'''\n",
-    "gets last letter\n",
-    "\n",
-    "txt = 'Hello'\n",
-    "l = txt[-1]\n",
-    "txt = txt[:-1]\n",
-    "print(l, txt)\n",
-    "'''"
+    "def rev(txt):\n",
+    "    if len(txt) == 0: return ''\n",
+    "    else: return rev(txt [1:]) + txt[0]\n",
+    "txt = 'hello'\n",
+    "print(rev(txt))\n"
    ]
   },
   {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "839523d5",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
    "cell_type": "markdown",
-   "id": "3",
+   "id": "b438b95c",
    "metadata": {},
    "source": [
     "## 2️⃣ Palindrome Check\n",
@@ -72,14 +64,31 @@
    "execution_count": null,
    "id": "4",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
    "source": [
-    "# TODO: Implement is_palindrome(s)\n"
+    "# TODO: Implement is_palindrome(s)\n",
+    "def pal(txt):\n",
+    "    if len(txt) <=1: return True\n",
+    "    elif txt[0] != txt[-1]: return False\n",
+    "    else: return pal(txt[1:-1])\n",
+    "\n",
+    "pal('racecar')"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "5",
+   "id": "096f6e39",
    "metadata": {},
    "source": [
     "## 3️⃣ Count Occurrences\n",
@@ -88,17 +97,34 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 7,
    "id": "6",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4\n"
+     ]
+    }
+   ],
    "source": [
-    "# TODO: Implement count_occurrences(lst, target)\n"
+    "# TODO: Implement count_occurrences(lst, target)\n",
+    "\n",
+    "lst = [1,2,2,3,2,45,2] #target of 2\n",
+    "\n",
+    "def count(lst, target):\n",
+    "    if len(lst) == 0: return 0\n",
+    "    elif lst[0] == target: return 1 + count(lst[1:], target)\n",
+    "    else: return 0 + count(lst[1:], target)\n",
+    "\n",
+    "print(count(lst,2))"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "7",
+   "id": "c3eac5bf",
    "metadata": {},
    "source": [
     "## 4️⃣ Sum of Digits\n",
@@ -107,30 +133,31 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 1,
    "id": "8",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "6\n"
+     ]
+    }
+   ],
    "source": [
     "# TODO: Implement sum_digits(n)\n",
     "\n",
-    "def sum_digits(n):\n",
-    "    if n == 1:\n",
-    "        return 1\n",
-    "    else: n + sum_digits(n- 1)\n",
+    "def sod(num):\n",
+    "    if num == 0: return 0\n",
+    "    else: return (num % 10) + sod(num // 10)\n",
     "\n",
-    "## if only want even numbers added\n",
-    "def mysum(n):\n",
-    "    if n == 1: return 0 \n",
-    "    elif n%2 ==1 :return 0 + mysum(n-1)\n",
-    "    else: n + mysum(n+1)\n",
-    "\n",
-    "\n"
+    "print(sod(123))\n"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "9",
+   "id": "6558c87b",
    "metadata": {},
    "source": [
     "## 5️⃣ Power Function\n",
@@ -144,38 +171,58 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "# TODO: Implement power(a, b)\n"
+    "# TODO: Implement power(a, b) ** come back to\n",
+    "\n",
+    "def power(a, b):\n",
+    "    if b == 0: return 1\n",
+    "    else: a * power(a, b-1)\n",
+    "\n",
+    "print (power(2,5))"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "11",
+   "id": "ae684e33",
    "metadata": {},
    "source": [
     "## 6️⃣ Find Maximum in a List\n",
-    "Write a recursive function `find_max(lst)` that returns the largest element in the list.\n",
-    "You may use an index parameter to avoid slicing.\n",
-    "\n",
-    "ex:\n",
-    "find_max([3, 7, 9 ,5]) #should get 9"
+    "Write a recursive function `find_max(lst)` that returns the largest element in the list.\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 4,
    "id": "12",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "99\n"
+     ]
+    }
+   ],
    "source": [
     "# TODO: Implement find_max(lst)\n",
     "\n",
-    "def find_max(myList):\n",
-    "    if"
+    "def find_max(lst):\n",
+    "    if len(lst) == 0: return float('-inf')\n",
+    "    else: return max(lst[0], find_max(lst[1:]))\n",
+    "lst = [1,2,5,99,3,4]\n",
+    "\n",
+    "print(find_max(lst))\n"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "13",
+   "id": "a07ad05a",
+   "metadata": {},
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "24c21f1a",
    "metadata": {},
    "source": [
     "## 7️⃣ Product of Elements in a List\n",
@@ -185,17 +232,31 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 7,
    "id": "14",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "48\n"
+     ]
+    }
+   ],
    "source": [
-    "# TODO: Implement product(lst)\n"
+    "# TODO: Implement product(lst)\n",
+    "\n",
+    "def prod(lst):\n",
+    "    if len(lst) == 0: return 1\n",
+    "    else: return lst[0] * prod(lst[1:])\n",
+    "\n",
+    "print(prod([1,2,2,3,4]))"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "15",
+   "id": "10ff5354",
    "metadata": {},
    "source": [
     "## 8️⃣ Flatten a Nested List\n",
@@ -215,7 +276,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "17",
+   "id": "081abef6",
    "metadata": {},
    "source": [
     "## 9️⃣ Print Numbers in Binary\n",
@@ -234,7 +295,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "19",
+   "id": "8d6a5c90",
    "metadata": {},
    "source": [
     "## 10. Draw a Triangle of Stars\n",
@@ -253,7 +314,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "20",
+   "id": "a6d8a3f5",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -263,6 +324,31 @@
     "\n",
     "# Test your function\n",
     "# triangle(4)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c8d76fdc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#REMOVE DUPLICATES\n",
+    "\n",
+    "lst = [1,2,2,2,3,4,5,5,6] # -> [1,2,3,4,5,6]\n",
+    "\n",
+    "[1,2] + [3,4] = [1,2,3,4] #add 2 lists, get one bigger list\n",
+    "1 + [1,2] # will return error\n",
+    "[1] + [1,2] # -> [1,1,2]\n",
+    "\n",
+    "\n",
+    "lst = [1,2,3,4]\n",
+    "lst[1:] # get back a list --> [2,3,4]\n",
+    "\n",
+    "def dupes(lst):\n",
+    "    if len(lst) <= 1: return lst\n",
+    "    elif lst[0] == lst[1] :\n",
+    "    else:"
    ]
   }
  ],

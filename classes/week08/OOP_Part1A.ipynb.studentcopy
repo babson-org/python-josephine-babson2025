@@ -107,16 +107,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "8bacae74",
+   "execution_count": 1,
+   "id": "b01fcb74",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Bob 1971\n"
+     ]
+    }
+   ],
    "source": [
     "class Student:\n",
     "    def __init__(self, name, year):\n",
     "        self.name = name\n",
     "        self.year = year\n",
-    "bob = Student('bob', 1971)\n",
+    "bob = Student('Bob', 1971)\n",
     "print(bob.name, bob.year)"
    ]
   },
@@ -145,25 +153,32 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "00479cb5",
+   "id": "45833335",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Chevy Nova is starting...\n"
+     ]
+    }
+   ],
    "source": [
     "class Car:\n",
     "    def __init__(self, make, model):\n",
     "        self.make = make\n",
     "        self.model = model\n",
-    "\n",
+    "    \n",
     "    def start(self):\n",
     "        print(f'{self.make} {self.model} is starting...')\n",
     "\n",
     "    def __str__(self):\n",
-    "        return f'{self.make} {self.model}'\n",
+    "        print(f'{self.make} {self.model}')\n",
     "\n",
-    "betsy = Car('chevy','nova')\n",
+    "betsy = Car('Chevy', 'Nova')\n",
     "betsy.start()\n",
-    "\n",
-    "print(betsy)"
+    " "
    ]
   },
   {
@@ -244,40 +259,6 @@
    ]
   },
   {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "b7a9a873",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "class Thermostat:\n",
-    "    def __init__(self, temperature=72):\n",
-    "        self._temperature = temperature\n",
-    "\n",
-    "    def __str__(self):\n",
-    "        return f'my temperture is {self._temperature}'\n",
-    "\n",
-    "    def get_temp(self):\n",
-    "        return self._temperature\n",
-    "\n",
-    "    def set_temp(self, new_temp):\n",
-    "        if 40 <= new_temp <= 90:\n",
-    "            print(f'✅ Temperature set to {new_temp}°F')\n",
-    "            self._temperature = new_temp\n",
-    "        else:\n",
-    "            print('⚠️ Out of range (40–90 °F).')\n",
-    "\n",
-    "house = Thermostat(68)\n",
-    "print(house)\n",
-    "\n",
-    "print(house.get_temp())\n",
-    "\n",
-    "house.set_temp(75)\n",
-    "\n",
-    "print(house)"
-   ]
-  },
-  {
    "cell_type": "markdown",
    "id": "15b8e609",
    "metadata": {},
@@ -309,53 +290,6 @@
     "```\n",
     "### 🪶 Exercise 8\n",
     "Convert your `Volume` class from Exercise 7 to use `@property` instead of `get_` and `set_`."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "94a5f254",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "class Thermostat:\n",
-    "    def __init__(self, temperature=72):\n",
-    "        self._temperature = temperature\n",
-    "\n",
-    "    @property\n",
-    "    def temperature(self):\n",
-    "        return self._temperature\n",
-    "\n",
-    "    @temperature.setter\n",
-    "    def temperature(self, new_temp):\n",
-    "        if 40 <= new_temp <= 90:\n",
-    "            print(f'✅ Setting temperature to {new_temp}°F')\n",
-    "            self._temperature = new_temp\n",
-    "        else:\n",
-    "            print('⚠️ Temperature out of range (40–90 °F).')\n",
-    "\n",
-    "    @temperature.deleter\n",
-    "    def temperature(self):\n",
-    "        print('🧊 Temperature reading deleted.')\n",
-    "        del self._temperature\n",
-    "\n",
-    "house = Thermostat()\n",
-    "print(house.temperature)\n",
-    "house.temperature = 80\n",
-    "print(house.temperature)\n",
-    "\n",
-    "print(house._temperature)\n",
-    "house._temperature = 90\n",
-    "print(house._temperature)\n",
-    "\n",
-    "\n",
-    "\n",
-    "\n",
-    "\n",
-    "\n",
-    "\n",
-    "\n",
-    "\n"
    ]
   },
   {
@@ -478,15 +412,26 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "8d965d3b",
+   "execution_count": 1,
+   "id": "8642e285",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "3.1416\n",
+      "12\n",
+      "wrong number of args\n",
+      "None\n"
+     ]
+    }
+   ],
    "source": [
     "def area(*args):\n",
     "    if len(args) == 1:\n",
-    "       return 3.1416 * args[0] * args[0]\n",
-    "    elif len(args) == 2:\n",
+    "        return 3.1416 * args[0] * args [0]\n",
+    "    elif len (args) == 2:\n",
     "        return args[0] * args[1]\n",
     "    else:\n",
     "        print('wrong number of args')\n",
@@ -575,15 +520,13 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "cd80aafa",
+   "id": "5eec4a29",
    "metadata": {},
    "outputs": [],
    "source": [
     "class BankAccount:\n",
     "    def __init__(self, balance):\n",
-    "        self._balance = balance\n",
-    "\n",
-    "        "
+    "        self.balance = balance"
    ]
   }
  ],
