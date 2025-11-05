@@ -30,17 +30,4 @@ def bubble_sort(values):
 
     return sorted
 
-# Merges and Sorts the two lists into one new one --> combine = [1, 3, 6, 7, 15, 36, 39]
 
-left = [1, 7, 27, 36]
-right = [3, 6, 15, 39]
-
-def combine(left, right):
-    array = []
-    l_cur = 0
-    r_cur = 0
-
-    cnt = 0 # sets up so its not a infinite loop, debugging trick
-
-    while cnt < 50: #not infinite, stops after 50 times through
-        cnt += 1
