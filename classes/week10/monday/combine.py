@@ -15,3 +15,7 @@ def combine(left, right):
         else:
             array.append(right[r_cur])
             r_cur += 1
+
+    return array + left[l_cur:] + right[r_cur:]
+
+print(combine(left, right))
