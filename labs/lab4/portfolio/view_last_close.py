@@ -12,4 +12,6 @@ def portfolio_view_last_close(self):
     the main program does the rest!
     
     """
+    symbols =[pos['sym'] for pos in self.positions]     #get all the tickers
+    return _prices.get_last_close(symbols)              #return last close prices
     
