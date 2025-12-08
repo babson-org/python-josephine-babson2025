@@ -27,26 +27,33 @@ def portfolio_sell_stock(self, sym: str, shares: float, price: float):
     except ValueError:
         print(f"Invalid Amount: Shares must be greater than zero")
 
-    pos = _find_position(self,sym)
-    if pos != None:
+
+    # rss this is tricky as you need to get the pos and make sure it's not None    
+    while True:
+        pos = _find_position(self,sym)
+        if pos == None:
+            print(sym, ' not found')
+            sym = input('Enter the symbol you want to sell')
+        else:
+            break
     
-        if shares > pos["shares"]:   #makes sure we have enough shares to be sold
-            print(f"Cannot sell {shares} shares of {sym}: only {pos['shares']} owned.") 
+    if shares > pos["shares"]:   #makes sure we have enough shares to be sold
+        print(f"Cannot sell {shares} shares of {sym}: only {pos['shares']} owned.") 
 
-        closing_price = _prices.get_last_close_map([sym]) #gets the dictionary
-        sell_price = closing_price[sym]    #gets the actual price
-        proceeds = sell_price * shares
-        self.cash += proceeds
+    closing_price = _prices.get_last_close_map([sym]) #gets the dictionary
+    sell_price = closing_price[sym]    #gets the actual price
+    proceeds = sell_price * shares
+    self.cash += proceeds
 
 
-        prev_shares = pos['shares']
-        cost_red = (shares / prev_shares) * pos["cost"]
+    prev_shares = pos['shares']
+    cost_red = (shares / prev_shares) * pos["cost"]
 
-        pos["cost"] -= cost_red
-        pos['shares'] -= shares
+    pos["cost"] -= cost_red
+    pos['shares'] -= shares
 
-        if pos['shares'] == 0:
-            self.positions.remove(pos)
-            
+    if pos['shares'] == 0:
+        self.positions.remove(pos)
+        
     return
-       
+    

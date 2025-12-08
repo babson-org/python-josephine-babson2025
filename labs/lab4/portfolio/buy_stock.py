@@ -36,8 +36,13 @@ def portfolio_buy_stock(self, sym: str, shares: float, price: float):
     closing_price = _prices.get_last_close_map([sym])
     buy_price = closing_price[sym]
 
-    # updated directions said to use the price that was passed into the method
+
+
+    # rss updated directions said to use the price that was passed into the method
     buy_price = price
+
+
+
     total_cost = buy_price * shares
 
     if total_cost > self.cash:

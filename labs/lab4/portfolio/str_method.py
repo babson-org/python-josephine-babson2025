@@ -6,4 +6,6 @@ def portfolio_str(self):
     """
     #return f"{self.client} has {len(self.positions)} positions and ${self.cash:,.2f}"
 
+    
+    # rss
     return f"{self.name} has {len(self.positions)} positions and ${self.cash:,.2f}"
