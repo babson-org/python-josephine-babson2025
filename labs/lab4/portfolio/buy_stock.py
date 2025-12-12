@@ -26,6 +26,23 @@ def portfolio_buy_stock(self, sym: str, shares: float, price: float):
     """
     
     
+<<<<<<< HEAD
+=======
+    closing_price = _prices.get_last_close_map([sym])
+    buy_price = closing_price[sym]
+
+
+
+    # rss updated directions said to use the price that was passed into the method
+    buy_price = price
+
+
+
+    total_cost = buy_price * shares
+
+    if total_cost > self.cash:
+        print('Insufficient funds')
+>>>>>>> 207ce133d500f3b9bcc6f3b4b480191033443a71
     
     return
 
